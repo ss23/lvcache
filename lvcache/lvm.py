@@ -93,7 +93,7 @@ class LogicalVolume(object):
 
         status = dict(zip(cache_status_fields,
                           status.strip().split()[:len(cache_status_fields)]))
-        for k in status.keys():
+        for k in list(status.keys()):
             if status[k].isdigit():
                 status[k] = int(status[k])
             elif '/' in status[k]:
